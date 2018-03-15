@@ -1,0 +1,27 @@
+{
+  "name": "Injeção CSS",
+  "version": "1.0.1",
+  "manifest_version": 2,
+  "description": "Injeção CSS",
+  "homepage_url": "http://marketpay.belem.br",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://appsweb1.tre-pa.jus.br/*"], 
+      "js": ["assets/js/vendor.js", "assets/js/app.js"],
+      "css": ["assets/css/app.css"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "Inject!"
+  },
+  "permissions": [
+    "http://appsweb1.tre-pa.jus.br/*",
+    "tabs"
+  ]
+}
